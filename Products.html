@@ -3,82 +3,39 @@
 <head>
     <style>
         /* Style for the container div */
-        .dropdown-container {
+        .input-container {
             display: flex;
             justify-content: space-between;
-            width: 75%;
-            margin: 0 auto;
+            width: 75%; /* Set the total width to 75% */
+            margin: 0 auto; /* Center the container */
         }
 
-        /* Style for each multiline dropdown */
-        .multiline-dropdown {
-            width: 30%; /* Adjust the width as needed */
-            position: relative;
-            display: inline-block;
-            border: 1px solid #111;
+        /* Style for each numeric input field */
+        .numeric-input {
+            width: 30%; /* Set each input field to 30% width */
+            text-align: center; /* Center the text inside the input field */
+            border: 1px solid #ccc; /* Add a surrounding border */
         }
 
-        /* Style for the dropdown content */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f1f1f1;
-            min-width: 160px;
-            max-height: 150px;
-            overflow-y: auto;
-            border: 1px solid #ccc;
-            z-index: 1;
-        }
-
-        /* Style for the dropdown on hover */
-        .multiline-dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Style for dropdown options */
-        .dropdown-option {
-            padding: 10px;
-            text-decoration: none;
-            display: block;
-        }
-
-        /* Style for dropdown option on hover */
-        .dropdown-option:hover {
-            background-color: #ddd;
+        /* Style for the input labels */
+        .input-label {
+            text-align: center; /* Center the label text */
         }
     </style>
 </head>
 <body>
-    <div class="dropdown-container">
-        <div class="multiline-dropdown">
-            <span>Dropdown 1</span>
-            <div class="dropdown-content">
-                <a href="#" class="dropdown-option">Option 1</a>
-                <a href="#" class="dropdown-option">Option 2</a>
-                <a href="#" class="dropdown-option">Option 3</a>
-                <a href="#" class="dropdown-option">Option 4</a>
-                <a href="#" class="dropdown-option">Option 5</a>
-            </div>
+    <div class="input-container">
+        <div class="numeric-input">
+            <label for="input1" class="input-label">Label 1</label>
+            <input type="number" id="input1" name="input1" value="3">
         </div>
-        <div class="multiline-dropdown">
-            <span>Dropdown 2</span>
-            <div class="dropdown-content">
-                <a href="#" class="dropdown-option">Option 1</a>
-                <a href="#" class="dropdown-option">Option 2</a>
-                <a href="#" class="dropdown-option">Option 3</a>
-                <a href="#" class="dropdown-option">Option 4</a>
-                <a href="#" class="dropdown-option">Option 5</a>
-            </div>
+        <div class="numeric-input">
+            <label for="input2" class="input-label">Label 2</label>
+            <input type="number" id="input2" name="input2" value="3">
         </div>
-        <div class="multiline-dropdown">
-            <span>Dropdown 3</span>
-            <div class="dropdown-content">
-                <a href="#" class="dropdown-option">Option 1</a>
-                <a href="#" class="dropdown-option">Option 2</a>
-                <a href="#" class="dropdown-option">Option 3</a>
-                <a href="#" class="dropdown-option">Option 4</a>
-                <a href="#" class="dropdown-option">Option 5</a>
-            </div>
+        <div class="numeric-input">
+            <label for="input3" class="input-label">Label 3</label>
+            <input type="number" id="input3" name="input3" value="3">
         </div>
     </div>
 </body>
