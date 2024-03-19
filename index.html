@@ -108,13 +108,37 @@ footer a:hover {
 	  <br>per E-Mail unter <span class="redunderline">dozent@detlef-kremer.de</span> anfragen.
 	 <br>Das System steht regelmäßig von 08:00 bis 18:00 Uhr zur Verfügung. Sollten Sie in dringenden
 	 <br>Fällen außerhalb dieser Zeiten zugreifen müssen, bitte ich um eine entsprechende e-mail.
-		<br>Zum LMS <a href="http://fachwissen.click/moodle401/">moodle LMS</a> </div>
+	 <br>moodle is <input type="checkbox">  <span id="statusText">off</span>	
+	 <br>Zum LMS <a href="http://fachwissen.click/moodle401/">moodle LMS</a> </div>
 
 
    <div class="leftaligned-container"> <a href="https://dmnb.consulting/impressum.html">Impressum</a> </div>
 
 	<div class="leftaligned-container"> <a href="https://dmnb.consulting/datenschutz.html">Datenschutzhinweise</a> </div>
 </body>
-
+<script>
+   window.onload = function() {
+	const url = 'http://3.78.120.106/moodle401';
+	fetch(url, {
+        method: 'HEAD', // A HEAD request could be enough for checking if the site is up
+        mode: 'cors' // Required for CORS policies, but limits the visibility of the response
+    })
+   .then(function(response) {
+        // It's difficult to get a reliable status due to 'no-cors', but reaching here usually means success
+        updateStatus('Website appears to be up!', true);
+    })
+    .catch(function(error) {
+        // Errors indicate the request was blocked or the site couldn't be reached
+        updateStatus('Website may be down or check was blocked by browser policy.', false);
+    });
+	alert("hi");
+	};
+	
+	function updateStatus(message, isSuccess) {
+    const statusText = document.getElementById('statusText');
+    statusText.textContent = message;
+    statusText.style.color = isSuccess ? 'green' : 'red';
+}
+</script>
   
 </html>
