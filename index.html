@@ -121,7 +121,7 @@ footer a:hover {
 	const url = 'https://3.78.120.106/moodle401';
 	fetch(url, {
         method: 'HEAD', // A HEAD request could be enough for checking if the site is up
-        mode: 'no-cors' // Required for CORS policies, but limits the visibility of the response
+        mode: 'cors' // Required for CORS policies, but limits the visibility of the response
     })
    .then(function(response) {
         // It's difficult to get a reliable status due to 'no-cors', but reaching here usually means success
