@@ -120,7 +120,7 @@ footer a:hover {
    window.onload = function() {
 	const url = 'https://3.78.120.106/moodle401';
 	fetch(url, {
-        method: 'HEAD', // A HEAD request could be enough for checking if the site is up
+        method: 'GET', // A HEAD request could be enough for checking if the site is up
         mode: 'cors' // Required for CORS policies, but limits the visibility of the response
     })
    .then(function(response) {
