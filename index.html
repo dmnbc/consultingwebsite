@@ -4,6 +4,47 @@
     <meta charset="utf-8">
     <title>dmnbc consulting start static page on aws amplify</title>
 	<style>
+	
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Adjust the spacing of layers */
+}
+
+.layer {
+    background-color: lightgray; /* Layer background color */
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: darkgray; /* Footer background color */
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer a {
+    margin: 0 10px;
+    color: white; /* Link color */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+	
+	
+	
 		#logo{ float:right;}
 		p{ clear:right;	}
 		body {
@@ -17,7 +58,7 @@
 		
 		.center-container {
 		text-align: center;
-		max-width: 400px; /* Adjust the width as needed */
+		max-width: 600px; /* Adjust the width as needed */
 		width: 100%;
 		padding: 20px;
 		border: 1px solid #ccc; /* Optional: add a border for visual clarity */
@@ -25,7 +66,7 @@
 
 		.leftaligned-container {
 		text-align: left;
-		max-width: 400px; /* Adjust the width as needed */
+		max-width: 800px; /* Adjust the width as needed */
 		width: 100%;
 		padding: 20px;
 		border: 1px solid #ccc; /* Optional: add a border for visual clarity */
@@ -43,32 +84,37 @@
 	  .inactive{
 		opacity: 0.2;
 	   }
+	   
+	   .redunderline{
+	   	color: red;
+	   }
 	</style>
    
 </head>
 	
 <body>
-   <div class="center-container">
+ 
 	
 	<h3>Diese Seite ermöglich Ihnen das Aufrufen der einzelnen Übungen aus meinen Lehrveranstaltungen</h3>
         <br><img id="logo" src="logo.svg" alt="Logo" width="150" height="90" ><br>
    
-   </div>
-        <div class="leftaligned-container">Auf dem unten verlinkten Lernmanagementsystem finden Sie
+ 
+     <div class="leftaligned-container">Auf dem unten verlinkten Lernmanagementsystem finden Sie
 	 <br>Einzelthemen oder Module aus meiner Tätigkeit als Hochschullehrer und Dozent.
 	 <br>Die einzelnen Themen sind in der Regel für jeden Besucher unserer Seite frei zugänglich. 
 	 <br>In wenigen Ausnahmefällen sind bestimmte Kurse jedoch durch ein Passwort geschützt,
 	 <br>um die Exklusivität und Sicherheit der Inhalte zu gewährleisten. Sollten Sie Interesse an einem 
 	 <br>dieser speziell geschützten Kurse haben, können Sie das erforderliche Passwort jederzeit 
-	  <br>per E-Mail unter dozent@detlef-kremer.de anfragen.
+	  <br>per E-Mail unter <span class="redunderline">dozent@detlef-kremer.de</span> anfragen.
 	 <br>Das System steht regelmäßig von 08:00 bis 18:00 Uhr zur Verfügung. Sollten Sie in dringenden
 	 <br>Fällen außerhalb dieser Zeiten zugreifen müssen, bitte ich um eine entsprechende e-mail.
-		<a href="http://fachwissen.click/moodle401/">moodle LMS</a> </div>
+		<br>Zum LMS <a href="http://fachwissen.click/moodle401/">moodle LMS</a> </div>
 
-	<div class="leftaligned-container"> <a href="https://dmnb.consulting/impressum.html">Impressum</a> </div>
+
+   <div class="leftaligned-container"> <a href="https://dmnb.consulting/impressum.html">Impressum</a> </div>
 
 	<div class="leftaligned-container"> <a href="https://dmnb.consulting/datenschutz.html">Datenschutzhinweise</a> </div>
-   </div>
 </body>
+
   
 </html>
