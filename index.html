@@ -108,7 +108,7 @@ footer a:hover {
 	  <br>per E-Mail unter <span class="redunderline">dozent@detlef-kremer.de</span> anfragen.
 	 <br>Das System steht regelmäßig von 08:00 bis 18:00 Uhr zur Verfügung. Sollten Sie in dringenden
 	 <br>Fällen außerhalb dieser Zeiten zugreifen müssen, bitte ich um eine entsprechende e-mail.
-	 <br>moodle is <input type="checkbox">  <span id="statusText">off</span>	
+	 <br>moodle is <span id="statusText">off</span>	<input type="checkbox">
 	 <br>Zum LMS <a href="http://fachwissen.click/moodle401/">moodle LMS</a> </div>
 
 
@@ -119,6 +119,7 @@ footer a:hover {
 <script>
    window.onload = function() {
 	const url = 'https://3.78.120.106/moodle401';
+	updateStatus('off or just starting. We try to examine the connection.');
 	fetch(url, {
         method: 'HEAD', // A HEAD request could be enough for checking if the site is up
         mode: 'cors' // Required for CORS policies, but limits the visibility of the response
