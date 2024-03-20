@@ -117,25 +117,18 @@ footer a:hover {
 	<div class="leftaligned-container"> <a href="https://dmnb.consulting/datenschutz.html">Datenschutzhinweise</a> </div>
 </body>
 <script>
-   window.onload = function() {
-	const url = 'https://3.78.120.106/status.php';
-	updateStatus('off or just starting. We try to examine the connection.');
-	fetch(url, {
-        method: 'GET'
-       
-    })
-   .then(response => response.json())
-   .then(function(data) {
-        // It's difficult to get a reliable status due to 'no-cors', but reaching here usually means success
-        updateStatus('Website appears to be ${data.status}!', true);
-    })
-    .catch(function(error) {
-        // Errors indicate the request was blocked or the site couldn't be reached
-        updateStatus('Website may be down or check was blocked by browser policy.', false);
-    });
-	//alert("hi");
-	};
-	
+ window.addEventListener('DOMContentLoaded', (event) => {
+	const checkImage = new Image();
+        checkImage.src = 'http://3.78.120.106/var/www/html/moodle401/pix/e/bullet_list.png'
+        checkImage.onload = function() {
+                // If the image loads, fachwissen.click is considered up.
+                updateStatus('verfügbar',true);
+            };
+            checkImage.onerror = function() {
+                // If the image fails to load, fachwissen.click is considered down.
+                updateStatus('nicht verfügbar',false);
+            };
+        });
 	function updateStatus(message, isSuccess) {
     const statusText = document.getElementById('statusText');
     statusText.textContent = message;
