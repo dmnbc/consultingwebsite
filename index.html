@@ -118,15 +118,16 @@ footer a:hover {
 </body>
 <script>
    window.onload = function() {
-	const url = 'https://3.78.120.106/moodle401';
+	const url = 'https://3.78.120.106/status.php';
 	updateStatus('off or just starting. We try to examine the connection.');
 	fetch(url, {
-        method: 'HEAD', // A HEAD request could be enough for checking if the site is up
-        mode: 'cors' // Required for CORS policies, but limits the visibility of the response
+        method: 'GET'
+       
     })
-   .then(function(response) {
+   .then(response => response.json())
+   .then(function(data) {
         // It's difficult to get a reliable status due to 'no-cors', but reaching here usually means success
-        updateStatus('Website appears to be up!', true);
+        updateStatus('Website appears to be ${data.status}!', true);
     })
     .catch(function(error) {
         // Errors indicate the request was blocked or the site couldn't be reached
