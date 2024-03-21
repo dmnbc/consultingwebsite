@@ -117,23 +117,24 @@ footer a:hover {
 	<div class="leftaligned-container"> <a href="https://dmnb.consulting/datenschutz.html">Datenschutzhinweise</a> </div>
 </body>
 <script>
-/* window.addEventListener('DOMContentLoaded', (event) => {
-	const checkImage = new Image();
-        checkImage.src = 'https://3.78.120.106/var/www/html/moodle401/pix/e/bullet_list.png'
-        checkImage.onload = function() {
-                // If the image loads, fachwissen.click is considered up.
-                updateStatus('verfügbar',true);
-            };
-            checkImage.onerror = function() {
-                // If the image fails to load, fachwissen.click is considered down.
-                updateStatus('nicht verfügbar',false);
-            };
-        });
-	function updateStatus(message, isSuccess) {
+window.addEventListener('DOMContentLoaded', (event) => {
+const requestOptions = {
+  method: "GET",
+  redirect: "follow"
+};
+
+fetch("https://status.fachwissen.click/", requestOptions)
+  .then((response) => response.text())
+  .then((result) => alert(result))
+  .catch((error) => alert(error));
+
+
+	
+    function updateStatus(message, isSuccess) {
     const statusText = document.getElementById('statusText');
     statusText.textContent = message;
     statusText.style.color = isSuccess ? 'green' : 'red';
-} */
+} 
 </script>
   
 </html>
