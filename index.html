@@ -127,7 +127,7 @@ const requestOptions = {
 fetch("https://status.fachwissen.click/", requestOptions)
   .then((response) => alert(response.text()))
   .then((result) => updateStatus(" on ", true))
-  .catch((error) => updateStatus(" off ", false)));
+  .catch((error) => updateStatus(" off ", false));
 
 
 	
