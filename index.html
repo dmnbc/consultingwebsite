@@ -124,7 +124,8 @@ const requestOptions = {
   redirect: "follow"
 };
 
-fetch("https://status.fachwissen.click/", requestOptions)
+fetch("http://fimando.de/subdomain/status/", requestOptions)
+// fetch("https://status.fachwissen.click/", requestOptions)
   .then((response) => response.text())
   .then((result) => updateStatus(" on ", true))
   .catch((error) => updateStatus(" off ", false));
